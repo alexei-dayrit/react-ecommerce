@@ -2956,6 +2956,48 @@ function createSvgIcon(path, displayName) {
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/icons/esm/ArrowLeftOutlined.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@material-ui/icons/esm/ArrowLeftOutlined.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utils_createSvgIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/core/esm/utils/createSvgIcon.js");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_utils_createSvgIcon__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+  d: "M14 7l-5 5 5 5V7z"
+}), 'ArrowLeftOutlined'));
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/esm/ArrowRightOutlined.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@material-ui/icons/esm/ArrowRightOutlined.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utils_createSvgIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/core/esm/utils/createSvgIcon.js");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_utils_createSvgIcon__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+  d: "M10 17l5-5-5-5v10z"
+}), 'ArrowRightOutlined'));
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/icons/esm/Search.js":
 /*!*******************************************************!*\
   !*** ./node_modules/@material-ui/icons/esm/Search.js ***!
@@ -18898,8 +18940,8 @@ const Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
   font-weight: bold;
+  padding: 1px;
 `;
 
 const Announcement = () => {
@@ -18907,6 +18949,129 @@ const Announcement = () => {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Announcement);
+
+/***/ }),
+
+/***/ "./src/components/Carousel.jsx":
+/*!*************************************!*\
+  !*** ./src/components/Carousel.jsx ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/ArrowLeftOutlined.js");
+/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/ArrowRightOutlined.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _data_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data.js */ "./src/data.js");
+
+
+
+
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+`;
+const Arrow = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div`
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #f9f1f1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: ${props => props.direction === 'left' && '10px'};
+  right: ${props => props.direction === 'right' && '10px'};
+  margin: auto;
+  cursor: pointer;
+  opacity: 0.7;
+  z-index: 9999;
+`;
+const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div`
+  height: 100%;
+  display: flex;
+  transition: all 1s ease;
+  transform: translateX(${props => props.carouselIndex * -100}vw);
+`;
+const Item = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: ${props => props.bg};
+`;
+const ImageContainer = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div`
+  flex: 1;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+`;
+const Image = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img`
+  height: 90%;
+  object-fit: contain;
+  width: 100%;
+`;
+const InfoContainer = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div`
+  width: 40%;
+  padding: 3rem;
+`;
+const Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1`
+  font-size: 70px;
+`;
+const Description = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p`
+  margin: 3rem 0;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 3px;
+`;
+const Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button`
+  padding: 0.8rem;
+  font-size: 20px;
+  background-color: transparent;
+  cursor: pointer;
+`;
+
+const Carousel = () => {
+  const [carouselIndex, setCarouselIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+
+  const handleClick = direction => {
+    if (direction === 'left') {
+      setCarouselIndex(carouselIndex > 0 ? carouselIndex - 1 : 2);
+    } else {
+      setCarouselIndex(carouselIndex < 2 ? carouselIndex + 1 : 0);
+    }
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Arrow, {
+    direction: "left",
+    onClick: () => handleClick('left')
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_3__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Wrapper, {
+    carouselIndex: carouselIndex
+  }, _data_js__WEBPACK_IMPORTED_MODULE_1__.carouselItems.map(item => {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Item, {
+      key: item.id,
+      bg: item.bg
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(ImageContainer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Image, {
+      src: item.src
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(InfoContainer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Title, null, item.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Description, null, item.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Button, null, "VIEW NOW"))), ";");
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Arrow, {
+    direction: "right",
+    onClick: () => handleClick('right')
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_4__["default"], null)));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Carousel);
 
 /***/ }),
 
@@ -18994,6 +19159,39 @@ const Navbar = () => {
 
 /***/ }),
 
+/***/ "./src/data.js":
+/*!*********************!*\
+  !*** ./src/data.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "carouselItems": () => (/* binding */ carouselItems)
+/* harmony export */ });
+const carouselItems = [{
+  id: 1,
+  src: '../dist/images/carousel-item1.avif',
+  title: 'SUMMER SALE',
+  description: 'DON\'T GO CHEAP ON STYLE! SAVE 15% ON SELECT ITEMS',
+  bg: 'f5fafd'
+}, {
+  id: 2,
+  src: '../dist/images/carousel-item2.avif',
+  title: 'FALL COLLECTION',
+  description: 'DON\'T GO CHEAP ON STYLE! SAVE 15% ON SELECT ITEMS',
+  bg: 'fcf1ed'
+}, {
+  id: 3,
+  src: '../dist/images/carousel-item3.avif',
+  title: 'STREETWEAR',
+  description: 'DON\'T GO CHEAP ON STYLE! SAVE 15% ON SELECT ITEMS',
+  bg: 'fbf0f4'
+}];
+
+/***/ }),
+
 /***/ "./src/pages/Home.jsx":
 /*!****************************!*\
   !*** ./src/pages/Home.jsx ***!
@@ -19008,12 +19206,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _components_Announcement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Announcement */ "./src/components/Announcement.jsx");
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Navbar */ "./src/components/Navbar.jsx");
+/* harmony import */ var _components_Carousel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Carousel */ "./src/components/Carousel.jsx");
+
 
 
 
 
 const Home = () => {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Announcement__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Announcement__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Carousel__WEBPACK_IMPORTED_MODULE_3__["default"], null));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
