@@ -100,7 +100,7 @@ const Carousel = () => {
 
       <Wrapper carouselIndex={carouselIndex}>
         {carouselItems.map(item => {
-          return <>
+          return (
             <Item key={item.id} bg={item.bg}>
               <ImageContainer>
                 <Image src={item.src} />
@@ -110,8 +110,8 @@ const Carousel = () => {
                 <Description>{item.description}</Description>
                 <Button>VIEW NOW</Button>
               </InfoContainer>
-            </Item>;
-          </>;
+            </Item>
+          );
         })}
       </Wrapper>
 

@@ -19059,12 +19059,12 @@ const Carousel = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_3__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Wrapper, {
     carouselIndex: carouselIndex
   }, _data_js__WEBPACK_IMPORTED_MODULE_1__.carouselItems.map(item => {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Item, {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Item, {
       key: item.id,
       bg: item.bg
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(ImageContainer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Image, {
       src: item.src
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(InfoContainer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Title, null, item.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Description, null, item.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Button, null, "VIEW NOW"))), ";");
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(InfoContainer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Title, null, item.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Description, null, item.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Button, null, "VIEW NOW")));
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Arrow, {
     direction: "right",
     onClick: () => handleClick('right')
@@ -19072,6 +19072,104 @@ const Carousel = () => {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Carousel);
+
+/***/ }),
+
+/***/ "./src/components/Categories.jsx":
+/*!***************************************!*\
+  !*** ./src/components/Categories.jsx ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data */ "./src/data.js");
+/* harmony import */ var _CategoryItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CategoryItem */ "./src/components/CategoryItem.jsx");
+
+
+
+
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div`
+  display: flex;
+  padding: 1.5rem;
+  justify-content: space-between;
+`;
+
+const Categories = () => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Container, null, _data__WEBPACK_IMPORTED_MODULE_1__.categories.map(item => {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CategoryItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: item.id,
+      item: item
+    });
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Categories);
+
+/***/ }),
+
+/***/ "./src/components/CategoryItem.jsx":
+/*!*****************************************!*\
+  !*** ./src/components/CategoryItem.jsx ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
+  flex: 1;
+  margin: 3px;
+  height: 70vh;
+  position: relative;
+`;
+const Image = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+const InfoContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+const Title = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1`
+  color: white;
+  margin-bottom: 1.2rem;
+`;
+const Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button`
+  border: none;
+  padding: 0.6rem;
+  background-color: white;
+  color: gray;
+  cursor: pointer;
+  font-weight: 600;
+`;
+
+const CategoryItem = props => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Image, {
+    src: props.item.src
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(InfoContainer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Title, null, props.item.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Button, null, "SHOP NOW")));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CategoryItem);
 
 /***/ }),
 
@@ -19168,7 +19266,8 @@ const Navbar = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "carouselItems": () => (/* binding */ carouselItems)
+/* harmony export */   "carouselItems": () => (/* binding */ carouselItems),
+/* harmony export */   "categories": () => (/* binding */ categories)
 /* harmony export */ });
 const carouselItems = [{
   id: 1,
@@ -19189,6 +19288,19 @@ const carouselItems = [{
   description: 'DON\'T GO CHEAP ON STYLE! SAVE 15% ON SELECT ITEMS',
   bg: 'fbf0f4'
 }];
+const categories = [{
+  id: 1,
+  src: 'https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  title: 'SHIRT STYLE!'
+}, {
+  id: 2,
+  src: 'https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  title: 'STREETWEAR'
+}, {
+  id: 3,
+  src: 'https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+  title: 'LIGHT JACKETS'
+}];
 
 /***/ }),
 
@@ -19207,13 +19319,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Announcement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Announcement */ "./src/components/Announcement.jsx");
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Navbar */ "./src/components/Navbar.jsx");
 /* harmony import */ var _components_Carousel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Carousel */ "./src/components/Carousel.jsx");
+/* harmony import */ var _components_Categories__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Categories */ "./src/components/Categories.jsx");
+
 
 
 
 
 
 const Home = () => {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Announcement__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Carousel__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Announcement__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Carousel__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Categories__WEBPACK_IMPORTED_MODULE_4__["default"], null));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
