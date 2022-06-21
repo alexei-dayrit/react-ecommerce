@@ -19268,7 +19268,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "carouselItems": () => (/* binding */ carouselItems),
 /* harmony export */   "categories": () => (/* binding */ categories),
-/* harmony export */   "popularProducts": () => (/* binding */ popularProducts)
+/* harmony export */   "products": () => (/* binding */ products)
 /* harmony export */ });
 const carouselItems = [{
   id: 1,
@@ -19302,7 +19302,7 @@ const categories = [{
   src: 'https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
   title: 'LIGHT JACKETS'
 }];
-const popularProducts = [{
+const products = [{
   id: 1,
   src: 'https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png'
 }, {
