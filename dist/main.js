@@ -19118,12 +19118,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/Home */ "./src/pages/Home.jsx");
 /* harmony import */ var _pages_ProductList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/ProductList */ "./src/pages/ProductList.jsx");
+/* harmony import */ var _pages_Product__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Product */ "./src/pages/Product.jsx");
+
 
 
 
 
 const App = () => {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_ProductList__WEBPACK_IMPORTED_MODULE_2__["default"], null);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_Product__WEBPACK_IMPORTED_MODULE_3__["default"], null);
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
@@ -19872,6 +19874,33 @@ const Home = () => {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
+
+/***/ }),
+
+/***/ "./src/pages/Product.jsx":
+/*!*******************************!*\
+  !*** ./src/pages/Product.jsx ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div`
+
+`;
+
+const Product = () => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Container, null, "Product");
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Product);
 
 /***/ }),
 
