@@ -19117,11 +19117,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/Home */ "./src/pages/Home.jsx");
+/* harmony import */ var _pages_ProductList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/ProductList */ "./src/pages/ProductList.jsx");
+
 
 
 
 const App = () => {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_Home__WEBPACK_IMPORTED_MODULE_1__["default"], null);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_ProductList__WEBPACK_IMPORTED_MODULE_2__["default"], null);
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
@@ -19870,6 +19872,71 @@ const Home = () => {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
+
+/***/ }),
+
+/***/ "./src/pages/ProductList.jsx":
+/*!***********************************!*\
+  !*** ./src/pages/ProductList.jsx ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Navbar */ "./src/components/Navbar.jsx");
+/* harmony import */ var _components_Announcement__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Announcement */ "./src/components/Announcement.jsx");
+/* harmony import */ var _components_Products__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Products */ "./src/components/Products.jsx");
+/* harmony import */ var _components_Newsletter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Newsletter */ "./src/components/Newsletter.jsx");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Footer */ "./src/components/Footer.jsx");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+
+
+
+
+
+
+const Container = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div``;
+const Title = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].h1`
+  margin: 1.5rem;
+`;
+const FilterContainer = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div`
+  display: flex;
+  justify-content: space-between;
+`;
+const Filter = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div`
+  margin: 1.5rem;
+`;
+const FilterText = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].span`
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 1.2rem;
+`;
+const Select = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].select`
+margin-right: 1.2rem;
+  padding: 0.5rem;
+`;
+const Option = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].option`
+
+`;
+
+const ProductList = () => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Announcement__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Title, null, "Dresses"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(FilterContainer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Filter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(FilterText, null, "Filter Products:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Select, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Option, {
+    disabled: true,
+    selected: true
+  }, "Color"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Option, null, "White"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Option, null, "Black"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Option, null, "Red"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Option, null, "Blue"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Option, null, "Yellow"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Option, null, "Green")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Select, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Option, {
+    disabled: true,
+    selected: true
+  }, "Size"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Option, null, "XS"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Option, null, "S"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Option, null, "M"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Option, null, "L"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Option, null, "XL"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Filter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(FilterText, null, "Sort Products:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Select, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Option, {
+    selected: true
+  }, "Newest"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Option, null, "Price (asc)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Option, null, "Price (desc)")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Products__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Newsletter__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_5__["default"], null));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProductList);
 
 /***/ }),
 
